@@ -1,0 +1,24 @@
+{
+  "generatedOn": "2026-09-03",
+  "originalPackageBytes": 41123468,
+  "optimizedPackageBytesBeforeReport": 22609397,
+  "packageReductionPercent": 45.0,
+  "convertedJpegImages": 49,
+  "jpegToWebpAverageSsim": 0.9862,
+  "convertedLargeTransparentPngImages": 4,
+  "convertedOpaquePngImages": 1,
+  "convertedAnimatedGifToWebp": 1,
+  "animatedWebpFrames": 110,
+  "loadingChanges": [
+    "Only first-screen hero media is eager-loaded",
+    "Hidden galleries load images on demand",
+    "CRT alternate channels load only after selection",
+    "1000GRIT video starts near its viewport and pauses away from it",
+    "Duplicate Google Fonts stylesheet request was consolidated"
+  ],
+  "viewerFixes": [
+    "Custom cursor renders above the photo viewer",
+    "Portrait photos are detected after decoding and constrained to the usable dynamic viewport",
+    "Viewer controls reserve their own space on desktop and mobile"
+  ]
+}
