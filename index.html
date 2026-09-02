@@ -1419,7 +1419,7 @@ html, body, body *, body *::before, body *::after {
 .grit-bottom-close{width:min(100%,1440px);margin:0 auto;padding:92px 0 10px;display:flex;justify-content:center;border-top:1px solid var(--grit-line)}.grit-toggle--bottom{min-width:min(520px,86vw)}
 @media(max-width:800px){.grit-video{width:100vh;height:100vw;min-width:145vh;min-height:145vw}.grit-logo-switch{width:min(92vw,680px)}.grit-content{padding-left:18px;padding-right:18px}.grit-about{padding:82px 0}.grit-work-head{grid-template-columns:1fr;align-items:start}.grit-steps{grid-template-columns:repeat(2,1fr)}.grit-card,.grit-pax-card{flex-basis:74vw;width:74vw}.grit-card:hover,.grit-pax-card:hover{flex-basis:84vw;width:84vw}}
 @media(max-width:480px){.grit-intro{min-height:76vh}.grit-toggle{font-size:23px;padding:17px 22px}.grit-steps{grid-template-columns:1fr}.grit-steps li{min-height:126px}.grit-process,.grit-work-section{padding:78px 0 88px}.grit-card,.grit-pax-card{flex-basis:84vw;width:84vw}.grit-card:hover,.grit-pax-card:hover{flex-basis:88vw;width:88vw}}
-</style><link href="portfolio-redesign.css" rel="stylesheet"/></head>
+</style><link href="portfolio-redesign.css?v=20260903-2" rel="stylesheet"/></head>
 <body>
 <header class="top"><img alt="PES" class="logo-img" data-src="assets/2c7dd84c74bdf943f27e.png" loading="lazy" decoding="async"/><nav aria-label="Основная навигация" class="site-nav"><a href="#ch5"><span class="nav-num">01</span><span data-ru="">Работы</span><span data-en="">Work</span></a><a href="#about"><span class="nav-num">02</span><span data-ru="">Обо мне</span><span data-en="">About</span></a><a href="#contact"><span class="nav-num">03</span><span data-ru="">Контакты</span><span data-en="">Contact</span></a></nav><div class="header-tools"><nav class="langtoggle">
 <button class="active" id="btn-ru">RU</button>
@@ -2102,5 +2102,5 @@ html, body, body *, body *::before, body *::after {
  const detailImgs=["assets/86f61e4dd7cae9f65d06.webp", "assets/681d9aa1501c39e82d98.webp", "assets/2f77c9390d26ec5d2973.webp", "assets/eeef7c9fd1d11079f475.webp"]; const modal=document.getElementById('pax-modal'); const modalImg=modal?.querySelector('.pax-modal-image');
  section.querySelectorAll('[data-pax-card]').forEach(card=>card.addEventListener('click',()=>{const i=Number(card.dataset.index||0);if(modal&&modalImg){modalImg.src=detailImgs[i];modal.hidden=false;document.body.style.overflow='hidden';}}));
  function closeModal(){if(modal)modal.hidden=true;document.body.style.overflow='';} modal?.querySelector('.pax-modal-close')?.addEventListener('click',closeModal);modal?.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-})();</script><script src="portfolio-redesign.js"></script></body>
+})();</script><script src="portfolio-redesign.js?v=20260903-2"></script></body>
 </html>

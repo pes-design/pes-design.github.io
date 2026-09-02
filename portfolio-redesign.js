@@ -4,19 +4,23 @@
     image.src = image.dataset.src;
     delete image.dataset.src;
   };
+  let deferredImageObserver = null;
+  const observeDeferredImage = image => {
+    if (!(image instanceof HTMLImageElement) || !image.dataset.src) return;
+    if (deferredImageObserver) deferredImageObserver.observe(image);
+    else hydrateImage(image);
+  };
   const deferredImages = [...document.querySelectorAll('img[data-src]')];
   if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver(entries => {
+    deferredImageObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         hydrateImage(entry.target);
-        imageObserver.unobserve(entry.target);
+        deferredImageObserver.unobserve(entry.target);
       });
     }, {rootMargin:'600px 0px'});
-    deferredImages.forEach(image => imageObserver.observe(image));
-  } else {
-    deferredImages.forEach(hydrateImage);
   }
+  deferredImages.forEach(observeDeferredImage);
 
   const viewportMeta = document.querySelector('meta[name="viewport"]');
   if (viewportMeta) {
@@ -1070,6 +1074,7 @@
         stableCard.tabIndex = 0;
         stableCard.setAttribute('aria-label', oldCard.getAttribute('aria-label') || 'PAX ANIMA');
         [...oldCard.children].forEach(child => stableCard.append(child.cloneNode(true)));
+        stableCard.querySelectorAll('img[data-src]').forEach(observeDeferredImage);
         oldCard.replaceWith(stableCard);
       });
 
